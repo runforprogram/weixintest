@@ -37,7 +37,6 @@ class APIView(View):
 class Verify(APIView):
     def get(self, request):
         args = request.GET
-        LOGGER.debug("request=")
         echostr = args.get('echostr', '')
         print echostr
         if utils.verify_wx(request):

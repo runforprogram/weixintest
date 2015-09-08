@@ -7,6 +7,7 @@ import requests
 import random
 from uuid import uuid1
 from bs4 import BeautifulSoup
+import utils
 
 import defines
 import display
@@ -386,6 +387,8 @@ def worker_csv_row(worker):
 
 def verify_wx(request):
     args = request.GET
+    Logger=utils.COMMON_LOGGER
+    Logger.debug("this is for test")
     echostr = args.get('echostr', '')
     signature = args.get('signature', '')
     timestamp = args.get('timestamp', '')
