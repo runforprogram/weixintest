@@ -32,15 +32,12 @@ class APIView(View):
 
     def get_arg(self, arg_key):
         return self.args.get(arg_key, '').strip()
-<<<<<<< HEAD
-=======
 
 
->>>>>>> cfa815ead8a9d97dee2cf001c66504009fc76f12
 class Verify(APIView):
     def get(self, request):
         args = request.GET
-        LOGGER.debug("request="+request.__str__)
+        LOGGER.debug("request=")
         echostr = args.get('echostr', '')
         print echostr
         if utils.verify_wx(request):
