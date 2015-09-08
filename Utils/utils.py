@@ -23,6 +23,7 @@ def get_common_logger(name='common', logfile=None):
     '''
     my_logger = logging.getLogger(name)
     my_logger.setLevel(config.LOG_LEVEL)
+    print  logfile
     if logfile:
         handler = logging.FileHandler(logfile)
     else:
