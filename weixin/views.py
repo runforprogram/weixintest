@@ -38,6 +38,7 @@ class Verify(APIView):
     def get(self, request):
         args = request.GET
         echostr = args.get('echostr', '')
+        LOGGER.debug("this is for test in get ")
         print echostr
         if utils.verify_wx(request):
             return HttpResponse(echostr)
