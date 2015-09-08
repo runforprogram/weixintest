@@ -44,6 +44,7 @@ class Verify(APIView):
         else:
             return HttpResponse('Error Signature')
     def post(self, request):
+        LOGGER.debug("this is for test in post")
         if utils.verify_wx(request):
             ret = self.handle_msg(request)
             LOGGER.debug(ret)
