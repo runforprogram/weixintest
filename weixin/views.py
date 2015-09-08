@@ -38,9 +38,6 @@ class Verify(APIView):
     def get(self, request):
         args = request.GET
         echostr = args.get('echostr', '')
-        LOGGER.debug("this is for test in get ")
-        print("this is for test in get")
-        print echostr
         if utils.verify_wx(request):
             return HttpResponse(echostr)
         else:
@@ -61,7 +58,7 @@ class Verify(APIView):
         msg=self.msg_dict.get('msg')
         openid=self.msg_dict.get('to_user_name')
         msg=u'无法识别你说的 %s，'%(self.msg_dict.get('msg',''))
-        self.msg_dict.setdefault('msg',msg)
+        self.msg_dict['msg']=msg
         ret=self.auto_reply_text()
         return  ret
 
